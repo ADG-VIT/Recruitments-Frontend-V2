@@ -412,35 +412,34 @@ export class SignUp extends Component {
 													{this.state.gitError}
 												</div>
 											) : null}
-											
-												<div
-													className="btn1"
-													onClick={(event) => {
-														this.formSubmitHandler(
-															event,
-															this.props
-														);
-														this.setState({
-															cooldown: 0,
-														});
-													}}
-												>
-													Sign Up
-												</div>
-												<br />
-													<div
-													className="btn2"
-													onClick={() =>
-														this.setState({
-															firstPage: true,
-															emailError: "",
-															phoneError: "",
-															gitError: "",
-														})
-													}
-												>
-													Go Back
-											
+
+											<div
+												className="btn1"
+												onClick={(event) => {
+													this.formSubmitHandler(
+														event,
+														this.props
+													);
+													this.setState({
+														cooldown: 0,
+													});
+												}}
+											>
+												Sign Up
+											</div>
+											<br />
+											<div
+												className="btn2"
+												onClick={() =>
+													this.setState({
+														firstPage: true,
+														emailError: "",
+														phoneError: "",
+														gitError: "",
+													})
+												}
+											>
+												Go Back
 											</div>
 										</div>
 									</div>
@@ -448,38 +447,38 @@ export class SignUp extends Component {
 							)
 						) : (
 							<div className="signup_page">
-									<div className="left">
-										<img alt="background" src={back_img} />
+								<div className="left">
+									<img alt="background" src={back_img} />
+								</div>
+								<div className="right">
+									<div className="main_form">
+										<h1 className="heading">
+											You are all set!
+										</h1>
+										<p className="para">
+											Verification E Mail Sent to your VIT
+											Mail ID
+										</p>
+										<button
+											disabled={!!this.state.cooldown}
+											type="button"
+											className="btn2"
+											onClick={(event) => {
+												this.setState({ cooldown: 60 });
+												this.resendVerification();
+												this.countdown();
+											}}
+										>
+											{this.state.cooldown > 0
+												? this.state.cooldown
+												: "Resend mail"}
+										</button>
+										<Link to="/login" className="btn1">
+											Log In
+										</Link>
 									</div>
-									<div className="right">
-										<div className="main_form">
-											<h1 className="heading">You are all set!</h1>
-											<p className="para">
-												Verification E Mail Sent to your VIT Mail ID
-											</p>
-											<button
-										disabled={!!this.state.cooldown}
-										type="button"
-										className="btn2"
-										onClick={(event) => {
-											this.setState({ cooldown: 60 });
-											this.resendVerification();
-											this.countdown();
-										}}
-									>
-										{this.state.cooldown > 0
-											? this.state.cooldown
-											: "Resend mail"}
-											</button>
-											<Link
-										to="/login"
-										className="btn1"
-									>
-										Log In
-									</Link>
-										</div>
-									</div>
-									</div>
+								</div>
+							</div>
 						)}
 					</form>
 				</Background>

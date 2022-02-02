@@ -78,10 +78,10 @@
 	color: rgba(255, 255, 255, 0.7);
 }
 
-.instrRight ul{
-    padding: 0;
-    list-style: disc;
-    list-style-type: disc;
+.instrRight ul {
+	padding: 0;
+	list-style: disc;
+	list-style-type: disc;
 }
 
 .instrRight ul li {
@@ -98,10 +98,10 @@
 }
 
 .instrbtn1 {
+	font-family: GilroyMedium;
 	-webkit-border-radius: 12;
 	-moz-border-radius: 12;
 	border-radius: 12px;
-	font-family: Arial;
 	color: #ffffff;
 	font-size: 16px;
 	background: #6b27f8;
@@ -121,5 +121,3 @@
 	background: #4506c8;
 	text-decoration: none;
 }
-
-

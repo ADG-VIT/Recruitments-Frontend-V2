@@ -148,13 +148,12 @@ class DesignQuiz extends React.Component {
 			return <Redirect to="/" />;
 		}
 		return (
-			<Background>
+			<div>
 				{this.state.quizQuestions.length === 0 ? (
 					<div className="loading">Loading...</div>
 				) : (
 					<>
-						<div className="heading">Design Quiz</div>
-						<div className="question-section">
+						<div className="quizTop">
 							<div className="question-count">
 								<span>
 									Question{" "}
@@ -162,14 +161,20 @@ class DesignQuiz extends React.Component {
 								</span>
 								/{this.state.quizQuestions.length}
 							</div>
-							<div className="design-quiz">
+							<div className="heading">Design Quiz</div>
+							<div className="timer">
+								<Timer />
+							</div>
+						</div>
+						<div className="quizMain">
+							<div className="quizLeft">
 								{
 									this.state.quizQuestions[
 										this.state.currentQuestionIndex
 									].questionDescription
 								}
 							</div>
-							<div className="answer-section">
+							<div className="quizRight">
 								{Object.keys(
 									this.state.quizQuestions[
 										this.state.currentQuestionIndex
@@ -294,52 +299,52 @@ class DesignQuiz extends React.Component {
 										}
 									}
 								})}
-							</div>
-							<div className="btn-bottom">
-								{this.state.currentQuestionIndex === 0 ? (
-									<button disabled={true} id="disabled-btn">
-										Previous
-									</button>
-								) : (
-									<button
-										onClick={() => {
-											this.gotoPreviousQuestion();
-										}}
-									>
-										Previous
-									</button>
-								)}
-								{/* <button className={ submitButton } onCLick={ () => { this.showModal1() } }>Submit</button> */}
-								{this.state.currentQuestionIndex === 9 ? (
-									<button
-										onClick={() => {
-											this.showModal1();
-										}}
-									>
-										Submit
-									</button>
-								) : (
-									<button
-										onClick={() => {
-											this.gotoNextQuestion();
-										}}
-									>
-										Next
-									</button>
-								)}
-								<Modal
-									show={this.state.showModal}
-									onHide={this.hideModal}
-									submitQuiz={this.submitQuiz}
-								/>
-							</div>
-							<div className="timer">
-								<Timer />
+								<div className="btn-bottom">
+									{this.state.currentQuestionIndex === 0 ? (
+										<button
+											disabled={true}
+											id="disabled-btn"
+										>
+											Previous
+										</button>
+									) : (
+										<button
+											onClick={() => {
+												this.gotoPreviousQuestion();
+											}}
+										>
+											Previous
+										</button>
+									)}
+									{/* <button className={ submitButton } onCLick={ () => { this.showModal1() } }>Submit</button> */}
+									{this.state.currentQuestionIndex === 9 ? (
+										<button
+											onClick={() => {
+												this.showModal1();
+											}}
+										>
+											Submit
+										</button>
+									) : (
+										<button
+											onClick={() => {
+												this.gotoNextQuestion();
+											}}
+										>
+											Next
+										</button>
+									)}
+									<Modal
+										show={this.state.showModal}
+										onHide={this.hideModal}
+										submitQuiz={this.submitQuiz}
+									/>
+								</div>
 							</div>
 						</div>
 					</>
 				)}
-			</Background>
+			</div>
 		);
 	}
 }

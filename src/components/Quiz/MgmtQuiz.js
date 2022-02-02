@@ -147,13 +147,12 @@ class MgmtQuiz extends React.Component {
 			this.props.history.push("/");
 		}
 		return (
-			<Background>
+			<div>
 				{this.state.quizQuestions.length === 0 ? (
 					<div className="loading">Loading...</div>
 				) : (
 					<>
-						<div className="heading">Management Quiz</div>
-						<div className="question-section">
+						<div className="quizTop">
 							<div className="question-count">
 								<span>
 									Question{" "}
@@ -161,73 +160,85 @@ class MgmtQuiz extends React.Component {
 								</span>
 								/{this.state.quizQuestions.length}
 							</div>
-							<div className="management-quiz">
+							<div className="heading">Management Quiz</div>
+							{/* <div className="timer">
+								<Timer />
+							</div> */}
+						</div>
+						<div className="quizMain">
+							<div className="quizLeft">
 								{
 									this.state.quizQuestions[
 										this.state.currentQuestionIndex
-									].description
+									].questionDescription
 								}
 							</div>
-							<div className="answer-section">
-								<textarea
-									className="mgmt-answer"
-									placeholder="Enter your answer..."
-									value={
-										this.state.inputValues[
-											this.state.currentQuestionIndex
-										]
-									}
-									onChange={(e) => {
-										this.setResponsesArray(
-											this.state.quizQuestions[
+							<div className="quizRight">
+								<div className="answer-section">
+									<textarea
+										className="mgmt-answer"
+										placeholder="Enter your answer..."
+										value={
+											this.state.inputValues[
 												this.state.currentQuestionIndex
-											]._id,
-											e
-										);
-									}}
-								/>
-							</div>
-							<div className="btn-bottom">
-								{this.state.currentQuestionIndex === 0 ? (
-									<button disabled={true} id="disabled-btn">
-										Previous
-									</button>
-								) : (
-									<button
-										onClick={() => {
-											this.gotoPreviousQuestion();
+											]
+										}
+										onChange={(e) => {
+											this.setResponsesArray(
+												this.state.quizQuestions[
+													this.state
+														.currentQuestionIndex
+												]._id,
+												e
+											);
 										}}
-									>
-										Previous
-									</button>
-								)}
-								{this.state.currentQuestionIndex === 4 ? (
-									<button
-										onClick={() => {
-											this.showModal1();
-										}}
-									>
-										Submit
-									</button>
-								) : (
-									<button
-										onClick={() => {
-											this.gotoNextQuestion();
-										}}
-									>
-										Next
-									</button>
-								)}
-								<Modal
-									show={this.state.showModal}
-									onHide={this.hideModal}
-									submitQuiz={this.submitQuiz}
-								/>
+									/>
+								</div>
+								<div className="btn-bottom">
+									{this.state.currentQuestionIndex === 0 ? (
+										<button
+											disabled={true}
+											id="disabled-btn"
+										>
+											Previous
+										</button>
+									) : (
+										<button
+											onClick={() => {
+												this.gotoPreviousQuestion();
+											}}
+										>
+											Previous
+										</button>
+									)}
+									{this.state.currentQuestionIndex === 4 ? (
+										<button
+											onClick={() => {
+												this.showModal1();
+											}}
+										>
+											Submit
+										</button>
+									) : (
+										<button
+											onClick={() => {
+												this.gotoNextQuestion();
+											}}
+										>
+											Next
+										</button>
+									)}
+									<Modal
+										show={this.state.showModal}
+										onHide={this.hideModal}
+										submitQuiz={this.submitQuiz}
+									/>
+								</div>
 							</div>
 						</div>
 					</>
 				)}
-			</Background>
+			</div>
 		);
 	}
 }

@@ -16,10 +16,10 @@
 	/* height: 60px; */
 }
 
-a.btn1{
-	    text-decoration: none;
-    width: 95% !important;
-    height: 30px !important;
+a.btn1 {
+	text-decoration: none;
+	width: 95% !important;
+	height: 30px !important;
 }
 
 .btn1:hover {
