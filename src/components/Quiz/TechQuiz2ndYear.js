@@ -86,45 +86,52 @@ class TechQuiz2ndYear extends React.Component {
 		return (
 			<Background>
 				<>
-					<div className="heading">Technical Quiz</div>
-					<div className="question-section">
-						<div className="answer-section">
-							<div className="tech2-quiz">
-								Please enter a brief description about yourself
+					<div className="quizMain">
+						<div className="heading">Technical Quiz</div>
+						<div className="question-section">
+							<div className="answer-section">
+								<div className="tech2-quiz">
+									Please enter a brief description about
+									yourself
+								</div>
+								<textarea
+									className="mgmt-answer"
+									placeholder="Enter your answer..."
+									value={this.state.brief}
+									onChange={(e) => {
+										this.setState({
+											brief: e.target.value,
+										});
+									}}
+								/>
+								<div className="tech2-quiz">
+									Please enter some links which you think that
+									we should know about
+								</div>
+								<textarea
+									className="mgmt-answer"
+									placeholder="Enter your answer..."
+									value={this.state.projects}
+									onChange={(e) => {
+										this.setState({
+											projects: e.target.value,
+										});
+									}}
+								/>
 							</div>
-							<textarea
-								className="mgmt-answer"
-								placeholder="Enter your answer..."
-								value={this.state.brief}
-								onChange={(e) => {
-									this.setState({ brief: e.target.value });
-								}}
-							/>
-							<div className="tech2-quiz">
-								Please enter some links which you think that we
-								should know about
+							<div className="btn-bottom">
+								<button
+									onClick={() => {
+										this.showModal1();
+									}}
+								>
+									Submit
+								</button>
 							</div>
-							<textarea
-								className="mgmt-answer"
-								placeholder="Enter your answer..."
-								value={this.state.projects}
-								onChange={(e) => {
-									this.setState({ projects: e.target.value });
-								}}
-							/>
-						</div>
-						<div className="btn-bottom">
-							<button
-								onClick={() => {
-									this.showModal1();
-								}}
-							>
-								Submit
-							</button>
-						</div>
-						{/* <div className="timer">
+							{/* <div className="timer">
                 <Timer />
               </div> */}
+						</div>
 					</div>
 					<Modal
 						show={this.state.showModal}

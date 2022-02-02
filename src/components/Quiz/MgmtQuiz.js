@@ -147,33 +147,28 @@ class MgmtQuiz extends React.Component {
 			this.props.history.push("/");
 		}
 		return (
-			<div>
+			<Background>
 				{this.state.quizQuestions.length === 0 ? (
 					<div className="loading">Loading...</div>
 				) : (
 					<>
-						<div className="quizTop">
-							<div className="question-count">
-								<span>
-									Question{" "}
-									{this.state.currentQuestionIndex + 1}
-								</span>
-								/{this.state.quizQuestions.length}
-							</div>
-							<div className="heading">Management Quiz</div>
-							{/* <div className="timer">
-								<Timer />
-							</div> */}
-						</div>
 						<div className="quizMain">
-							<div className="quizLeft">
-								{
-									this.state.quizQuestions[
-										this.state.currentQuestionIndex
-									].questionDescription
-								}
-							</div>
-							<div className="quizRight">
+							<div className="heading">Management Quiz</div>
+							<div className="question-section">
+								<div className="question-count">
+									<span>
+										Question{" "}
+										{this.state.currentQuestionIndex + 1}
+									</span>
+									/{this.state.quizQuestions.length}
+								</div>
+								<div className="management-quiz">
+									{
+										this.state.quizQuestions[
+											this.state.currentQuestionIndex
+										].description
+									}
+								</div>
 								<div className="answer-section">
 									<textarea
 										className="mgmt-answer"
@@ -238,7 +233,7 @@ class MgmtQuiz extends React.Component {
 						</div>
 					</>
 				)}
-			</div>
+			</Background>
 		);
 	}
 }

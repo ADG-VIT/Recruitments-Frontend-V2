@@ -56,6 +56,29 @@ body {
 	font-family: Gilroy !important;
 }
 
+.quizMain {
+	height: 100%;
+	width: 100%;
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 5%;
+	margin: 0;
+}
+
+.quizMain .heading {
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 29px;
+	letter-spacing: 0.371094px;
+	color: #ffffff;
+	margin-bottom: 5%;
+}
+
 .quizTop {
 	width: 100vw;
 	height: 12vh;
@@ -89,7 +112,7 @@ body {
 	color: rgba(255, 255, 255, 0.95);
 }
 
-.quizRight{
+.quizRight {
 	height: 88vh;
 	width: 50vw;
 	background: #1f1f1f;
@@ -121,7 +144,7 @@ body {
 	width: fit-content;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
-	font-family: SF Pro Display;
+	/* font-family: SF Pro Display; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 18px;
@@ -139,7 +162,7 @@ body {
 	margin: 2% 0;
 	white-space: pre-wrap;
 	overflow-wrap: break-word;
-	font-family: SF Pro Display;
+	/* font-family: SF Pro Display; */
 	font-style: normal;
 	font-weight: 300;
 	font-size: 18px;
@@ -165,13 +188,15 @@ body {
 	cursor: pointer;
 	/* width:60%; */
 	width: 100%;
-	background: transparent;
+	background: #2b2b2b;
+	border: 3px solid #383838;
+	box-sizing: border-box;
+	border-radius: 12px;
+	font-family: GilroyMedium;
 	outline: none;
-	border: 1px solid grey;
-	border-radius: 15px;
-	/* height:45px; */
-	margin-bottom: 10px;
-	color: white;
+	margin-bottom: 3%;
+	letter-spacing: 0.371094px;
+	color: rgba(255, 255, 255, 0.95);
 	text-align: left;
 	padding: 10px 15px;
 	font-size: 1rem;
@@ -181,19 +206,24 @@ body {
   margin-top: 10px;
 } */
 .blackButton:hover {
-	background: dodgerblue;
+	background: #5207ef;
+	border: 3px solid #7747dc;
 }
 .blackButton:focus {
-	background: dodgerblue;
+	background: #5207ef;
+	border: 3px solid #7747dc;
 }
 .blackButton:active {
-	background: dodgerblue;
+	background: #5207ef;
+	border: 3px solid #7747dc;
 }
 .blackButton:target {
-	background: dodgerblue;
+	background: #5207ef;
+	border: 3px solid #7747dc;
 }
 .blackButton:visited {
-	background: dodgerblue;
+	background: #5207ef;
+	border: 3px solid #7747dc;
 }
 .blueButton {
 	cursor: pointer;
@@ -256,18 +286,28 @@ body {
 .btn-bottom > button {
 	flex: 1;
 	margin: 0 3vw;
-	background: transparent;
 	outline: none;
-	border: 1px solid dodgerblue;
-	/* height:30px; */
-	color: dodgerblue;
-	height: 40px;
-	font-size: 20px;
-	border-radius: 5px;
+	background: #6b27f8;
+	border: none;
+	border-radius: 12px;
+	height: auto;
+	width: 200px;
 	cursor: pointer;
+	font-family: Gilroy;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	letter-spacing: 0.75px;
+	color: rgba(255, 255, 255, 0.95);
+	padding: 2%;
 }
 .btn-bottom > button:hover {
-	background: dodgerblue;
+	background: #5207ef;
 	color: white;
 }
 .btn-bottom > button:active {
@@ -286,7 +326,7 @@ body {
 	margin-bottom: 15px;
 }
 .progress-done {
-	background: #018cf1;
+	background: #6b27f8;
 	border-radius: 20px;
 	color: #fff;
 	height: 100%;
@@ -317,7 +357,7 @@ body {
 	/* resize: none; */
 	/* width:60%; */
 	width: 90%;
-	height: 20vh;
+	height: 30vh;
 	background: transparent;
 	outline: none;
 	border: 1px solid grey;
@@ -341,4 +381,24 @@ body {
 	cursor: not-allowed;
 	letter-spacing: 0.75px;
 	color: #9362fa;
+}
+
+.wrapper {
+	height: auto;
+	width: 100%;
+	/* background-color: #4506c8; */
+	padding: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.wrapper .sub-heading {
+	margin-bottom: 5%;
+}
+
+img.icons {
+	width: 20%;
 }

@@ -24,7 +24,7 @@ export class Login extends Component {
 	validate = () => {
 		let regError = "";
 		let passError = "";
-		var regPattern = /^[12][09][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
+		var regPattern = /^[2][01][A-Z][A-Z][A-Z]\d{4}$/;
 		console.log(this.state.regno);
 		// console.log(this.state.regno);
 		console.log(this.state.password);

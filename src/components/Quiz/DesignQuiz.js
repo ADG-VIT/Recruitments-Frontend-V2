@@ -148,117 +148,39 @@ class DesignQuiz extends React.Component {
 			return <Redirect to="/" />;
 		}
 		return (
-			<div>
+			<Background>
 				{this.state.quizQuestions.length === 0 ? (
 					<div className="loading">Loading...</div>
 				) : (
 					<>
-						<div className="quizTop">
-							<div className="question-count">
-								<span>
-									Question{" "}
-									{this.state.currentQuestionIndex + 1}
-								</span>
-								/{this.state.quizQuestions.length}
-							</div>
-							<div className="heading">Design Quiz</div>
-							<div className="timer">
-								<Timer />
-							</div>
-						</div>
 						<div className="quizMain">
-							<div className="quizLeft">
-								{
-									this.state.quizQuestions[
-										this.state.currentQuestionIndex
-									].questionDescription
-								}
-							</div>
-							<div className="quizRight">
-								{Object.keys(
-									this.state.quizQuestions[
-										this.state.currentQuestionIndex
-									].options
-								).map((key, index) => {
-									if (
-										this.state.finalResponse[
+							<div className="heading">Design Quiz</div>
+							<div className="question-section">
+								<div className="question-count">
+									<span>
+										Question{" "}
+										{this.state.currentQuestionIndex + 1}
+									</span>
+									/{this.state.quizQuestions.length}
+								</div>
+								<div className="design-quiz">
+									{
+										this.state.quizQuestions[
 											this.state.currentQuestionIndex
-										] === undefined
-									) {
-										return (
-											<div
-												key={index}
-												onClick={() => {
-													this.updateOption(
-														this.returnQuestionID(),
-														index
-													);
-												}}
-											>
-												<button
-													className={
-														this.state.blackButton
-													}
-													value={
-														this.optionsArray[index]
-													}
-												>
-													{this.optionsArray[index]}.{" "}
-													{
-														this.state
-															.quizQuestions[
-															this.state
-																.currentQuestionIndex
-														].options[key]
-													}
-												</button>
-											</div>
-										);
-									} else {
+										].questionDescription
+									}
+								</div>
+								<div className="answer-section">
+									{Object.keys(
+										this.state.quizQuestions[
+											this.state.currentQuestionIndex
+										].options
+									).map((key, index) => {
 										if (
 											this.state.finalResponse[
 												this.state.currentQuestionIndex
-											].response ===
-											this.optionsArray[index]
+											] === undefined
 										) {
-											return (
-												<div
-													key={index}
-													onClick={() => {
-														this.updateOption(
-															this.returnQuestionID(),
-															index
-														);
-													}}
-												>
-													<button
-														className={
-															this.state
-																.blueButton
-														}
-														value={
-															this.optionsArray[
-																index
-															]
-														}
-													>
-														{
-															this.optionsArray[
-																index
-															]
-														}
-														.{" "}
-														{
-															this.state
-																.quizQuestions[
-																this.state
-																	.currentQuestionIndex
-															].options[key]
-														}
-													</button>
-												</div>
-											);
-										} else {
 											return (
 												<div
 													key={index}
@@ -296,9 +218,97 @@ class DesignQuiz extends React.Component {
 													</button>
 												</div>
 											);
+										} else {
+											if (
+												this.state.finalResponse[
+													this.state
+														.currentQuestionIndex
+												].response ===
+												this.optionsArray[index]
+											) {
+												return (
+													<div
+														key={index}
+														onClick={() => {
+															this.updateOption(
+																this.returnQuestionID(),
+																index
+															);
+														}}
+													>
+														<button
+															className={
+																this.state
+																	.blueButton
+															}
+															value={
+																this
+																	.optionsArray[
+																	index
+																]
+															}
+														>
+															{
+																this
+																	.optionsArray[
+																	index
+																]
+															}
+															.{" "}
+															{
+																this.state
+																	.quizQuestions[
+																	this.state
+																		.currentQuestionIndex
+																].options[key]
+															}
+														</button>
+													</div>
+												);
+											} else {
+												return (
+													<div
+														key={index}
+														onClick={() => {
+															this.updateOption(
+																this.returnQuestionID(),
+																index
+															);
+														}}
+													>
+														<button
+															className={
+																this.state
+																	.blackButton
+															}
+															value={
+																this
+																	.optionsArray[
+																	index
+																]
+															}
+														>
+															{
+																this
+																	.optionsArray[
+																	index
+																]
+															}
+															.{" "}
+															{
+																this.state
+																	.quizQuestions[
+																	this.state
+																		.currentQuestionIndex
+																].options[key]
+															}
+														</button>
+													</div>
+												);
+											}
 										}
-									}
-								})}
+									})}
+								</div>
 								<div className="btn-bottom">
 									{this.state.currentQuestionIndex === 0 ? (
 										<button
@@ -340,11 +350,14 @@ class DesignQuiz extends React.Component {
 										submitQuiz={this.submitQuiz}
 									/>
 								</div>
+								<div className="timer">
+									<Timer />
+								</div>
 							</div>
 						</div>
 					</>
 				)}
-			</div>
+			</Background>
 		);
 	}
 }

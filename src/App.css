@@ -29,11 +29,59 @@ body {
 	padding: 0;
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* background-image: url("./assets/img/back-img.png"); */
 	background-color: #131313;
 	color: #fff;
 	/* background-size: cover; */
 }
-@media (min-width: 768px) {
+
+/* Scrollbar */
+:root::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+:root::-webkit-scrollbar {
+	width: 8px;
+	background-color: transparent;
+}
+
+:root::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #555;
+}
+
+@media only screen and (max-width: 768px) {
+	.deviceError {
+		display: block !important;
+		width: 90% !important;
+		height: 100vh !important;
+		background-color: #131313 !important;
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: space-around !important;
+		align-items: center !important;
+		z-index: 99 !important;
+		text-align: center !important;
+		font-size: 24px !important;
+		padding: 5% !important;
+	}
+
+	.navbar {
+		display: none !important;
+	}
+	.deviceError img {
+		width: 50%;
+		height: auto;
+		/* margin-bottom: 20%; */
+	}
+
+	.deviceError .sub {
+		font-size: 18px !important;
+	}
 }

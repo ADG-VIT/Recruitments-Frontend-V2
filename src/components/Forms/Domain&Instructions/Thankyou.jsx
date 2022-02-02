@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import classes from "./styles.module.css";
+import "./styles.module.css";
 import "../../Quiz/Quiz.css";
 import Background from "../../../hoc/Background/Background";
 import instagram from "../../../assets/img/instagram.png";
@@ -32,18 +32,19 @@ const ThankYou = () => {
   if (tech && man && des) {
     return (
       <Background>
-        <div className={classes.wrapper}>
+        <div className="wrapper">
           <h2>You have attempted all the tests</h2>
           <div className='sub-heading'>Stay connected to know your result</div>
           <hr></hr>
-          <div className={classes.iconContainer}>
+          <div className="iconContainer">
             <p>For regular updates, follow us on:</p>
-            <img src={instagram} alt='instagram' className={classes.icons} />
+           
             <a
               className='social-url'
               rel='noreferrer'
               target='_blank'
               href='https://www.instagram.com/adgvit'>
+               <img src={instagram} alt='instagram' className="icons" />
               <p>@adgvit</p>
             </a>
           </div>
@@ -53,13 +54,13 @@ const ThankYou = () => {
   } else {
     return (
       <Background>
-        <div className={classes.wrapper}>
+        <div className="wrapper">
           <h2>Your responses have been saved!</h2>
           <div className='sub-heading'>
             You can attempt a quiz from other domains if you haven't
           </div>
           <Link to='/selection'>
-            <button className={classes.redirectBtn}>
+            <button className="btn1">
               Attempt another quiz
             </button>
           </Link>

@@ -453,11 +453,11 @@ export class SignUp extends Component {
 								<div className="right">
 									<div className="main_form">
 										<h1 className="heading">
-											You are all set!
+											Verify your Account
 										</h1>
 										<p className="para">
-											Verification E Mail Sent to your VIT
-											Mail ID
+											Check your VIT Mail Inbox or Spam
+											Folder for the Verification Mail
 										</p>
 										<button
 											disabled={!!this.state.cooldown}
