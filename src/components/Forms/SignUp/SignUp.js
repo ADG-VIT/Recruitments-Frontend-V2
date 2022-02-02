@@ -36,8 +36,8 @@ export class SignUp extends Component {
 		let regError = "";
 		let passError = "";
 		let confirmPassError = "";
-		var regPattern = /^[12][09][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
-		var regPatternSoph = /^[1][9][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
+		var regPattern = /^[2][1][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
+		var regPatternSoph = /^[2][0][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
 
 		if (!this.state.name) {
 			nameError = "Name cannot be left empty";
@@ -157,7 +157,7 @@ export class SignUp extends Component {
 		});
 		var config = {
 			method: "post",
-			url: "https://adgrecruitments.herokuapp.com/user/signup",
+			url: "https://recruitment2022.herokuapp.com/user/signup",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -184,7 +184,7 @@ export class SignUp extends Component {
 		});
 		var config = {
 			method: "post",
-			url: "https://adgrecruitments.herokuapp.com/user/resendverification",
+			url: "https://recruitment22.herokuapp.com/user/resendverification",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -213,8 +213,8 @@ export class SignUp extends Component {
 
 	render() {
 		const loader = (
-			<div style={{ margin: "150px auto" }}>
-				<img src={adggif} height={100} alt="ADG gif loader" />
+			<div className="loader">
+				<img src={adggif} alt="ADG gif loader" />
 			</div>
 		);
 		if (this.state.loading) {
