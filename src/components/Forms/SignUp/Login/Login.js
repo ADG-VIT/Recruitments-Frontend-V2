@@ -4,6 +4,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Recaptcha from "react-google-invisible-recaptcha";
 import adggif from "../../../../assets/img/adggif.gif";
+import adglogo from "../../../../assets/img/adg_logo.svg";
+import back_img from "../../back_img_main.svg";
+// import Button from "../../Inputs/Button";
+// import Input from "../../Inputs/Input";
 
 export class Login extends Component {
 	state = {
@@ -21,12 +25,14 @@ export class Login extends Component {
 		let regError = "";
 		let passError = "";
 		var regPattern = /^[12][09][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
-
-		// if (!this.state.regno) {
-		// 	regError = "Enter Registration Number";
-		// } else if (!regPattern.test(this.state.regno)) {
-		// 	regError = "Enter a valid Registration Number";
-		// }
+		console.log(this.state.regno);
+		// console.log(this.state.regno);
+		console.log(this.state.password);
+		if (!this.state.regno) {
+			regError = "Enter Registration Number";
+		} else if (!regPattern.test(this.state.regno)) {
+			regError = "Enter a valid Registration Number";
+		}
 
 		if (!this.state.password) {
 			passError = "Enter Password";
@@ -73,6 +79,7 @@ export class Login extends Component {
 			url: "https://recruitment2022.herokuapp.com/user/login",
 			headers: {
 				"Content-Type": "application/json",
+				"Access-Control-Allow-Origin": "*",
 			},
 			data: data,
 			// onUploadProgress: function (progressEvent) {
@@ -109,56 +116,78 @@ export class Login extends Component {
 		return (
 			<>
 				<Background>
-					<div className="heading">Log In</div>
-					<div className="input-grp">
-						<label id="p2">Registration Number</label>
-						<input
-							className="input t-uc"
-							type="text"
-							placeholder="Enter Registration Number"
-							onChange={(event) => {
-								this.inputChangeHandler(event, "regno");
-							}}
-						/>
-					</div>
-					{this.state.regError ? (
-						<div className="error">{this.state.regError}</div>
-					) : null}
-					<div className="input-grp">
-						<label id="p1">Password</label>
-						<input
-							className="input"
-							type={`${
-								this.state.showPass ? "text" : "password"
-							}`}
-							placeholder="Enter Your Password"
-							style={{ marginBottom: 10, position: "relative" }}
-							onChange={(event) => {
-								this.inputChangeHandler(event, "password");
-							}}
-						/>
-						<div
-							className={`lgn-eye ${
-								this.state.showPass ? "lgn-eye-t" : null
-							}`}
-							onClick={this.eyeClickHandler}
-						>
-							<i className={`fas fa-eye  `}></i>
+					<div className="login_page">
+						<div className="left">
+							<div className="main_form">
+								<h1 className="heading">Login</h1>
+								<p className="para">
+									Login with your VIT Registration Number
+								</p>
+								<input
+									className="input t-uc"
+									type="text"
+									placeholder="Enter Registration Number"
+									onChange={(event) => {
+										this.inputChangeHandler(event, "regno");
+									}}
+								/>
+								{this.state.regError ? (
+									<div className="error">
+										{this.state.regError}
+									</div>
+								) : null}
+								<input
+									className="input"
+									type={`${
+										this.state.showPass
+											? "text"
+											: "password"
+									}`}
+									placeholder="Enter Your Password"
+									style={{
+										marginBottom: 10,
+										position: "relative",
+									}}
+									onChange={(event) => {
+										this.inputChangeHandler(
+											event,
+											"password"
+										);
+									}}
+								/>
+								{this.state.passError ? (
+									<div className="error">
+										{this.state.passError}
+									</div>
+								) : null}
+								<Link to="/forgotPassword" className="forgot">
+									Forgot Password?
+								</Link>
+								<div
+									className="btn1"
+									onClick={(event) => {
+										this.formSubmitHandler(
+											event,
+											this.props
+										);
+									}}
+								>
+									Log In
+								</div>
+								<p className="bottom">
+									Don’t have an account?{" "}
+									<Link to="/signup">
+										<span className="tosignup">
+											{" "}
+											Create One
+										</span>
+									</Link>
+								</p>
+							</div>
 						</div>
-					</div>
-					{this.state.passError ? (
-						<div className="error">{this.state.passError}</div>
-					) : null}
-					<div className="forgot-pass">
-						<Link to="/forgotPassword">Forgot Password?</Link>
-					</div>
-					<div
-						className="btn btn-blue lgn-btn"
-						onClick={(event) => {
-							this.formSubmitHandler(event, this.props);
-						}}
-					>
-						Log In
+						<div className="right">
+							<img alt="background" src={back_img} />
+						</div>
 					</div>
 				</Background>
 				<Recaptcha

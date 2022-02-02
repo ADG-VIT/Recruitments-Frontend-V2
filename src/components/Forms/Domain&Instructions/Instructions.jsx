@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Background from "../../../hoc/Background/Background";
-import classes from "./styles.module.css";
+import classes from "./Instructions.css";
 
 
 const Instructions = (props) => {
@@ -16,11 +16,17 @@ const Instructions = (props) => {
   };
   return (
     <Background>
-      <div className='heading'>{props.location.param==='Technical2' ?  "Technical" : props.location.param} Quiz</div>
+      <div className="instrCon">
+        <div className="instrMain">
+          <div className="instrLeft">
+            {props.location.param==='Technical2' ?  "Technical" : props.location.param} Quiz
+          </div>
+          <div className="instrRight">
+            <div className='heading2'>Instructions</div>
       <div className='sub-heading'>
         Please read the instructions carefully before attempting the quiz
       </div>
-      <div className='heading2'>Instructions</div>
+      
       <ul style={{ textAlign: "left" }}>
         <li className={classes.li}>The participant can attempt the quiz only ONCE.</li>
           {props.location.param === "Technical2" ? (null) : (
@@ -53,10 +59,16 @@ const Instructions = (props) => {
                   submitted.
                 </li>
               )}
-      </ul>
-      <Link  to={linkTo} className='btn btn-blue lgn-btn'>
-        Begin
+            </ul>
+               <Link  to={linkTo} className='instrbtn1'>
+        Start Test
       </Link>
+     
+          </div>
+      
+        </div>
+        </div>
+      
     </Background>
   );
 };

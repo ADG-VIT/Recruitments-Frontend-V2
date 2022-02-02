@@ -25,7 +25,7 @@ const Modal = (props) => {
           You won't be able to re-attempt or change your answers!
         </div>
         <div className='sub-btns'>
-          <button onClick={props.submitQuiz} className='btn submit-btn mod-btn'>
+          <button onClick={props.submitQuiz} className='btn1'>
             Confirm
           </button>
           {/* <button className='btn submit-btn mod-btn' onClick={props.onHide}>Close</button> */}

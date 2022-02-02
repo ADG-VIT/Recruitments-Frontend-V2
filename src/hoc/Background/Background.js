@@ -17,7 +17,7 @@ export class Background extends Component {
 		this.background = null;
 		this.state = {
 			Token: sessionStorage.getItem("Token"),
-			data: true,
+			data: false,
 			recruitmentStatus: true,
 			dateValue: "02-03-2022",
 			timeValue: "00:00",
@@ -117,7 +117,7 @@ export class Background extends Component {
 			this.setState({ loading: true });
 			axios
 				.get(
-					"https://adgrecruitments.herokuapp.com/user/getuser",
+					"https://recruitment2022.herokuapp.com/user/getuser",
 					config
 				)
 				.then(function (response) {
@@ -131,7 +131,7 @@ export class Background extends Component {
 		}
 		this.setState({ loading: true });
 		axios
-			.get("https://adgrecruitments.herokuapp.com/user/recruitmentstatus")
+			.get("https://recruitment2022.herokuapp.com/user/recruitmentstatus")
 			.then((recruitmentStatus) =>
 				this.setState({
 					recruitmentStatus: recruitmentStatus.data.status,
@@ -157,9 +157,7 @@ export class Background extends Component {
 			background = (
 				<div>
 					<div id="adglogo-cont2">
-						<a href="/">
-							<img id="adglogo2" src={adglogo} alt="ADG Logo" />
-						</a>
+						<img id="adglogo2" src={adglogo} alt="ADG Logo" />
 						<div className="flex"></div>
 						{this.state.data ? (
 							<div id="profile-container" className="pf-cr">

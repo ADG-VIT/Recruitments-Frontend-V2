@@ -18,7 +18,7 @@ const ThankYou = () => {
       },
     };
     axios
-      .get("https://adgrecruitments.herokuapp.com/user/getuser", config)
+      .get("https://recruitment2022.herokuapp.com/user/getuser", config)
       .then(function (response) {
         // console.log(response.data);
         setTech(response.data.userDetails.attemptedTechnical);

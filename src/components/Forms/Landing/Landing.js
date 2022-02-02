@@ -15,7 +15,7 @@ const Landing = (props) => {
 			<div className="landing_page">
 				<div className="left">
 					<div class="navbar">
-							<img id="adglogo" src={adglogo} alt="ADG Logo" />
+						<img id="adglogo" src={adglogo} alt="ADG Logo" />
 					</div>
 					<div className="info">
 						<h1>ADG VIT</h1>
@@ -25,10 +25,10 @@ const Landing = (props) => {
 							Have a dream to become techie? Let's begin now.
 						</p>
 						<Link to="/signup">
-							<Button class="btn1" heading="Create an Account" />
+							<button class="btn1">Create an Account </button>
 						</Link>
 						<Link to="/login">
-							<Button class="btn2" heading="Login" />
+							<button class="btn2"> Login </button>
 						</Link>
 					</div>
 				</div>

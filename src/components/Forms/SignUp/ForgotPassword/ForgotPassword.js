@@ -3,6 +3,8 @@ import Background from "../../../../hoc/Background/Background";
 import axios from "axios";
 import Recaptcha from "react-google-invisible-recaptcha";
 import adggif from "../../../../assets/img/adggif.gif";
+import back_img from "../../back_img_main.svg";
+import { Link } from "react-router-dom";
 
 export class ForgotPassword extends Component {
 	state = {
@@ -35,7 +37,7 @@ export class ForgotPassword extends Component {
 		});
 		const config = {
 			method: "post",
-			url: "https://adgrecruitments.herokuapp.com/user/resetpassword",
+			url: "https://recruitment2022.herokuapp.com/user/resetpassword",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -96,7 +98,7 @@ export class ForgotPassword extends Component {
 		});
 		const config = {
 			method: "PUT",
-			url: "https://adgrecruitments.herokuapp.com/user/updatepassword",
+			url: "https://recruitment2022.herokuapp.com/user/updatepassword",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -126,8 +128,8 @@ export class ForgotPassword extends Component {
 
 	render() {
 		const loader = (
-			<div style={{ margin: "65px auto" }}>
-				<img src={adggif} height={105} alt="ADG gif loader" />
+			<div className="loader">
+				<img src={adggif} alt="ADG gif loader" />
 			</div>
 		);
 		if (this.state.loading) {
@@ -142,132 +144,159 @@ export class ForgotPassword extends Component {
 						}}
 					>
 						{this.state.firstPage ? (
-							<div>
-								<div className="heading">Forgot Password</div>
-								<div className="input-grp">
-									<label>Email</label>
-									<input
-										className="input"
-										type="text"
-										placeholder="Enter Email"
-										value={this.state.email}
-										onChange={(event) => {
-											this.inputChangeHandler(
-												event,
-												"email"
-											);
-										}}
-									/>
-									{this.state.messageErr !== "" && (
-										<div className="error">
-											{this.state.emailErr}
+							<div className="login_page">
+								<div className="left">
+									<div className="main_form">
+										<h1 className="heading">
+											Forgot Password?
+										</h1>
+										<p className="para">
+											Dont worry, we got your back!
+										</p>
+										<input
+											className="input"
+											type="text"
+											placeholder="Enter Email"
+											value={this.state.email}
+											onChange={(event) => {
+												this.inputChangeHandler(
+													event,
+													"email"
+												);
+											}}
+										/>
+										{this.state.messageErr !== "" && (
+											<div className="error">
+												{this.state.emailErr}
+											</div>
+										)}
+
+										<div
+											className="btn1"
+											onClick={(event) => {
+												event.preventDefault();
+												this.forgotPasswordClickHandler(
+													event
+												);
+												this.countdown();
+												this.setState({ cooldown: 0 });
+											}}
+										>
+											Send OTP
 										</div>
-									)}
+
+										<p className="bottom">
+											<Link to="/login">
+												<span className="tosignup">
+													{" "}
+													Back to Login
+												</span>
+											</Link>
+										</p>
+									</div>
 								</div>
-								<div
-									className="btn btn-blue lgn-btn"
-									onClick={(event) => {
-										event.preventDefault();
-										this.forgotPasswordClickHandler(event);
-										this.countdown();
-										this.setState({ cooldown: 0 });
-									}}
-								>
-									Send OTP
+								<div className="right">
+									<img alt="background" src={back_img} />
 								</div>
 							</div>
 						) : (
-							<div>
-								<div className="heading">Change Password</div>
-								<div className="input-grp">
-									<label>OTP</label>
-									<input
-										className="input"
-										type="number"
-										placeholder="Enter OTP"
-										value={this.state.otp}
-										onChange={(event) => {
-											this.inputChangeHandler(
-												event,
-												"otp"
-											);
-										}}
-									/>
-									{this.state.otpErr !== "" && (
-										<div className="error">
-											{this.state.otpErr}
+							<div className="login_page">
+								<div className="left">
+									<div className="main_form">
+										<h1 className="heading">
+											Change your Password
+										</h1>
+										{/* <p className="para">
+											Just enter a few details and you are
+											good!
+										</p> */}
+										<input
+											className="input"
+											type="number"
+											placeholder="Enter OTP"
+											value={this.state.otp}
+											onChange={(event) => {
+												this.inputChangeHandler(
+													event,
+													"otp"
+												);
+											}}
+										/>
+										{this.state.otpErr !== "" && (
+											<div className="error">
+												{this.state.otpErr}
+											</div>
+										)}
+
+										<input
+											className="input"
+											type="password"
+											placeholder="Enter Password"
+											value={this.state.newPassword}
+											onChange={(event) => {
+												this.inputChangeHandler(
+													event,
+													"newPassword"
+												);
+											}}
+										/>
+										{this.state.newPasswordErr !== "" && (
+											<div className="error">
+												{this.state.newPasswordErr}
+											</div>
+										)}
+										<input
+											className="input"
+											type="password"
+											placeholder="Confirm Password"
+											value={this.state.confirmPassword}
+											onChange={(event) => {
+												this.inputChangeHandler(
+													event,
+													"confirmPassword"
+												);
+											}}
+										/>
+										{this.state.confirmPasswordErr !==
+											"" && (
+											<div className="error">
+												{this.state.confirmPasswordErr}
+											</div>
+										)}
+
+										<div
+											className="btn1"
+											onClick={(event) => {
+												event.preventDefault();
+												this.formSubmitHandler(
+													event,
+													this.props
+												);
+											}}
+										>
+											Change Password
 										</div>
-									)}
-								</div>
-								<div className="input-grp">
-									<label>New Password</label>
-									<input
-										className="input"
-										type="password"
-										placeholder="Enter Password"
-										value={this.state.newPassword}
-										onChange={(event) => {
-											this.inputChangeHandler(
-												event,
-												"newPassword"
-											);
-										}}
-									/>
-									{this.state.newPasswordErr !== "" && (
-										<div className="error">
-											{this.state.newPasswordErr}
-										</div>
-									)}
-								</div>
-								<div className="input-grp">
-									<label>Confirm Password</label>
-									<input
-										className="input"
-										type="password"
-										placeholder="Confirm Password"
-										value={this.state.confirmPassword}
-										onChange={(event) => {
-											this.inputChangeHandler(
-												event,
-												"confirmPassword"
-											);
-										}}
-									/>
-									{this.state.confirmPasswordErr !== "" && (
-										<div className="error">
-											{this.state.confirmPasswordErr}
-										</div>
-									)}
-								</div>
-								<div style={{ display: "flex" }}>
-									<div
-										className="btn btn-blue lgn-btn"
-										onClick={(event) => {
-											event.preventDefault();
-											this.formSubmitHandler(
-												event,
-												this.props
-											);
-										}}
-									>
-										Change Password
+										<br />
+										<button
+											disabled={!!this.state.cooldown}
+											className="btn2"
+											onClick={(event) => {
+												event.preventDefault();
+												this.setState({ cooldown: 60 });
+												this.forgotPasswordClickHandler(
+													event
+												);
+												this.countdown();
+											}}
+										>
+											{this.state.cooldown > 0
+												? this.state.cooldown
+												: "Resend OTP"}
+										</button>
 									</div>
-									<button
-										disabled={!!this.state.cooldown}
-										className="btn btn-blue lgn-btn"
-										onClick={(event) => {
-											event.preventDefault();
-											this.setState({ cooldown: 60 });
-											this.forgotPasswordClickHandler(
-												event
-											);
-											this.countdown();
-										}}
-									>
-										{this.state.cooldown > 0
-											? this.state.cooldown
-											: "Resend OTP"}
-									</button>
+								</div>
+								<div className="right">
+									<img alt="background" src={back_img} />
 								</div>
 							</div>
 						)}

@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import classes from "./styles.module.css";
+import "./Domain.css";
 import Background from "../../../hoc/Background/Background";
 import axios from "axios";
+import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
+import ColorLensIcon from "@mui/icons-material/ColorLens";
+import AssessmentIcon from "@mui/icons-material/Assessment";
 import { Redirect } from "react-router-dom";
 
 const DomainPage = (props) => {
@@ -44,6 +47,7 @@ const DomainPage = (props) => {
     axios
       .get("https://recruitment2022.herokuapp.com/user/getuser", config)
       .then(function (response) {
+        console.log(response);
         setUserDetails(response.data);
         setTech(response.data.userDetails.attemptedTechnical);
         setMan(response.data.userDetails.attemptedManagement);
@@ -65,61 +69,64 @@ const DomainPage = (props) => {
   } else {
     return (
       <Background>
-        <div className='heading'>Choose Domain</div>
-        <div className='sub-heading'>Choose a domain to start the quiz</div>
-        <div
-          // style={{
-          //   display: "flex",
-          //   flexDirection: "column",
-          //   justifyContent: "center",
-          // }}
-          onChange={domainValue}>
-          <div className='rdio-grp lgn-btn'>
-            <input
-              type='radio'
-              value='Technical'
-              name='selection'
-              id='technical'
-              disabled={tech}
-              className={classes.input}></input>
-            <label htmlFor='technical' className={`${classes.label} `}>
-              <i className='fas fa-cog dom-pg-ico'></i>
-              Technical
-            </label>
+        <div className="domainPage">
+        <div className="mainForm">
+          <h1 className="heading">Choose a Domain</h1>
+          <p className="para">Select a domain and Start Test for Round 1</p>
+          <div className="domains">
+            <div onChange={domainValue}>
+                <div className={tech ? 'domainRowDead' : 'domainRow'}>
+                  <PrecisionManufacturingIcon style={{ fontSize: 55 }} />
+                  <div className="info">
+                    <h1 className="heading">Technical</h1>
+                    <p className="para">10 Questions . 12 mins . Objective Type</p>
+                  </div>
+                    <input
+                      type='radio' value='Technical' name='selection' id='technical' disabled={tech}></input>
+                </div>
+                
+                <div className={man ? 'domainRowDead' : 'domainRow'}>
+                    <AssessmentIcon style={{ fontSize: 55 }} />
+                  <div className="info">
+                    <h1 className="heading">Management</h1>
+                    <p className="para">5 Questions . No Time. Subjective Type</p>
+                  </div>
+                    <input
+                      type='radio'
+                      value='Management'
+                      name='selection'
+                      id='management'
+                      disabled={man}
+                      className="input"></input>
+                </div>
+                <div className={des ? 'domainRowDead' : 'domainRow'}>
+                  <ColorLensIcon style={{ fontSize: 55 }} />
+                  <div className="info">
+                    <h1 className="heading">Design</h1>
+                    <p className="para">10 Questions . 12 mins . Objective Type</p>
+                  </div>
+                   <input
+                      type='radio'
+                      value='Design'
+                      name='selection'
+                      id='design'
+                      disabled={des}
+                      className="input"></input>
+                    </div>
+                
+            
+            
           </div>
-          <div className='rdio-grp lgn-btn'>
-            <input
-              type='radio'
-              value='Management'
-              name='selection'
-              id='management'
-              disabled={man}
-              className={classes.input}></input>
-            <label htmlFor='management' className={`${classes.label} `}>
-              <i className='fas fa-file-alt dom-pg-ico'></i>
-              Management
-            </label>
           </div>
-          <div className='rdio-grp lgn-btn' style={{ marginBottom: "20px" }}>
-            <input
-              type='radio'
-              value='Design'
-              name='selection'
-              id='design'
-              disabled={des}
-              className={classes.input}></input>
-            <label htmlFor='design' className={`${classes.label} `}>
-              <i className='fas fa-drafting-compass dom-pg-ico'></i>
-              Design
-            </label>
-          </div>
-
+         
           <Link
             to={linkTo}
-            className={`btn btn-blue lgn-btn ${domain ? "" : "disable-btn"}`}>
+            className={`domainbtn1 ${domain ? "" : "btn1_disabled"}`}>
             Start Quiz
-          </Link>
-        </div>
+            </Link>
+             </div>
+          </div>
+         
       </Background>
     );
   }
