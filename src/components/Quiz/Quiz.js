@@ -65,7 +65,7 @@ function Quiz(props) {
 	useEffect(() => {
 		var config = {
 			method: "get",
-			url: `https://adgrecruitments.herokuapp.com/questions/${domain}/get-quiz-questions/1/web`,
+			url: `https://recruitment2022.herokuapp.com/questions/${domain}/get-quiz-questions/1/web`,
 			headers: {
 				"auth-token": sessionStorage.getItem("Token"),
 			},
