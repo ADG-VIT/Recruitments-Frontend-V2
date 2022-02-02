@@ -4,6 +4,7 @@ import Portal from "../Portal.svg";
 import Button from "../Inputs/Button";
 import back_img from "../back_img_main.svg";
 import Background from "../../../hoc/Background/Background";
+import adglogo from "../../../assets/img/adg_logo.svg";
 
 const Landing = (props) => {
 	if (sessionStorage.getItem("Token")) {
@@ -13,6 +14,9 @@ const Landing = (props) => {
 		<Background>
 			<div className="landing_page">
 				<div className="left">
+					<div class="navbar">
+							<img id="adglogo" src={adglogo} alt="ADG Logo" />
+					</div>
 					<div className="info">
 						<h1>ADG VIT</h1>
 						<p className="heading1">Recruitments</p>

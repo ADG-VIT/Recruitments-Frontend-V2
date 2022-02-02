@@ -149,8 +149,8 @@ export class Background extends Component {
 		let background;
 		// let profile = null;
 		const loader = (
-			<div style={{ margin: "150px auto" }}>
-				<img src={adggif} height={100} alt="ADG gif loader" />
+			<div className="loader">
+				<img src={adggif} alt="ADG gif loader" />
 			</div>
 		);
 		if (this.state.Token) {
@@ -207,22 +207,22 @@ export class Background extends Component {
 		} else {
 			background = (
 				<div id="background">
-					<div id="adglogo-cont">
+					{/* <div id="adglogo-cont">
 						<a href="/">
 							<img id="adglogo" src={adglogo} alt="ADG Logo" />
 						</a>
-					</div>
-					<div className="container">
-						<div id="cont-box">
-							{this.state.recruitmentStatus ? (
-								!this.state.loading ? (
-									this.props.children
-								) : (
-									loader
-								)
-							) : (
-								<>
-									{/* <h2 align='center'>Recruitments coming soon</h2>
+					</div> */}
+					{/* <div className="container"> */}
+					{/* <div id="cont-box"> */}
+					{this.state.recruitmentStatus ? (
+						!this.state.loading ? (
+							this.props.children
+						) : (
+							loader
+						)
+					) : (
+						<>
+							{/* <h2 align='center'>Recruitments coming soon</h2>
                   {this.setEndDate()}
                   {this.state.isCountdownSet ? (
                     <Countdown
@@ -235,13 +235,12 @@ export class Background extends Component {
                       {this.state.infoMessage}
                     </p>
                   )} */}
-								</>
-							)}
-							{/*{this.props.children}*/}
-						</div>
-					</div>
-					<Footer />
+						</>
+					)}
+					{/*{this.props.children}*/}
 				</div>
+				// </div>
+				// </div>
 			);
 		}
 		return (
