@@ -2,5 +2,5 @@ html {
 	box-sizing: border-box;
 	overflow-x: hidden;
 	width: 100vw;
-	height: 100vh;
+	/* height: 100vh; */
 }

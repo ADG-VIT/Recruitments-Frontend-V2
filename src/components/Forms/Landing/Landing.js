@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Portal from "../Portal.svg";
+import Button from "../Inputs/Button";
+import back_img from "../back_img_main.svg";
 import Background from "../../../hoc/Background/Background";
 
 const Landing = (props) => {
@@ -8,20 +11,28 @@ const Landing = (props) => {
 	}
 	return (
 		<Background>
-			<div className="heading">Recruitment Portal</div>
-			<div className="sub-heading">
-				Welcome to the recruitment portal for<br></br>
-				Apple Developers Group
+			<div className="landing_page">
+				<div className="left">
+					<div className="info">
+						<h1>ADG VIT</h1>
+						<p className="heading1">Recruitments</p>
+						<img src={Portal} alt="Portal" className="portal_img" />
+						<p className="para">
+							Have a dream to become techie? Let's begin now.
+						</p>
+						<Link to="/signup">
+							<Button class="btn1" heading="Create an Account" />
+						</Link>
+						<Link to="/login">
+							<Button class="btn2" heading="Login" />
+						</Link>
+					</div>
+				</div>
+				<div className="right">
+					{/* <p className="hi">hi</p> */}
+					<img alt="background" src={back_img} />
+				</div>
 			</div>
-			<div className="heading2">Sign Up to get started</div>
-
-			<Link to="/signup" className="btn btn-blue landing-btn">
-				Sign Up
-			</Link>
-
-			<Link to="/login" className="btn btn-trans landing-btn">
-				Log In
-			</Link>
 		</Background>
 	);
 };

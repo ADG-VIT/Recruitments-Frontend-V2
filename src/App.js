@@ -29,11 +29,11 @@ export class App extends Component {
 	state = {
 		Token: sessionStorage.getItem("Token"),
 	};
-	// componentDidMount() {
-	//   if (this.state.Token) {
-	//     this.props.history.push("/selection");
-	//   }
-	// }
+	componentDidMount() {
+		if (this.state.Token) {
+			this.props.history.push("/selection");
+		}
+	}
 	render() {
 		return (
 			<div className="App">
