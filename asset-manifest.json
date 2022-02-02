@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b5b44f70.chunk.css",
+    "main.js": "/static/js/main.127f27c1.chunk.js",
+    "main.js.map": "/static/js/main.127f27c1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9c1816f2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9c1816f2.js.map",
+    "static/js/2.e122e5bf.chunk.js": "/static/js/2.e122e5bf.chunk.js",
+    "static/js/2.e122e5bf.chunk.js.map": "/static/js/2.e122e5bf.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b5b44f70.chunk.css.map": "/static/css/main.b5b44f70.chunk.css.map",
+    "static/js/2.e122e5bf.chunk.js.LICENSE.txt": "/static/js/2.e122e5bf.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/Gilroy-SemiBold.67802926.ttf",
+    "static/media/Portal.cfb1af0b.svg": "/static/media/Portal.cfb1af0b.svg",
+    "static/media/styles.module.css": "/static/media/vector.1f0cdecd.svg",
+    "static/media/adg_logo.f1cc8635.svg": "/static/media/adg_logo.f1cc8635.svg",
+    "static/media/adggif.81e3db74.gif": "/static/media/adggif.81e3db74.gif",
+    "static/media/back_img_main.e589d42b.svg": "/static/media/back_img_main.e589d42b.svg",
+    "static/media/userpic.6a56817b.png": "/static/media/userpic.6a56817b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9c1816f2.js",
+    "static/js/2.e122e5bf.chunk.js",
+    "static/css/main.b5b44f70.chunk.css",
+    "static/js/main.127f27c1.chunk.js"
+  ]
+}
