@@ -37,7 +37,7 @@ class DesignQuiz extends React.Component {
 
 	async getQuizQuestions() {
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/questions/design/get-quiz-questions/web",
+			"https://recruitment2022.herokuapp.com/questions/design/get-quiz-questions/web",
 			{
 				method: "GET",
 				headers: {
@@ -64,7 +64,7 @@ class DesignQuiz extends React.Component {
 		// const quizResponse = {qid: this.state.questionId, response: this.state.selectedOptions }
 		// console.log("Inside submitQuiz", this.selectedOptions);
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/user/design/submit",
+			"https://recruitment2022.herokuapp.com/user/design/submit",
 			{
 				method: "POST",
 				headers: {

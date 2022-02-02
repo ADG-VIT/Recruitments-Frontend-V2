@@ -39,7 +39,7 @@ class TechQuiz extends React.Component {
 
 	async getQuizQuestions() {
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/questions/technical/get-quiz-questions/1/web",
+			"https://recruitment2022.herokuapp.com/questions/technical/get-quiz-questions/1/web",
 			{
 				method: "GET",
 				headers: {
@@ -64,7 +64,7 @@ class TechQuiz extends React.Component {
 
 	async submitQuiz() {
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/user/technical/submit",
+			"https://recruitment2022.herokuapp.com/user/technical/submit",
 			{
 				method: "POST",
 				headers: {

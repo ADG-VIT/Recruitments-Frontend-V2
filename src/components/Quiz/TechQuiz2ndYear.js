@@ -35,7 +35,7 @@ class TechQuiz2ndYear extends React.Component {
 		// const quizResponse = {qid: this.state.questionId, response: this.state.selectedOptions }
 		// console.log("Inside submitQuiz", this.selectedOptions);
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/questions/technical/get-quiz-questions/2/web",
+			"https://recruitment2022.herokuapp.com/questions/technical/get-quiz-questions/2/web",
 			{
 				method: "GET",
 				headers: {
@@ -54,7 +54,7 @@ class TechQuiz2ndYear extends React.Component {
 				alert(error.message);
 			});
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/user/technical2/submit",
+			"https://recruitment2022.herokuapp.com/user/technical2/submit",
 			{
 				method: "POST",
 				headers: {

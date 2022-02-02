@@ -35,7 +35,7 @@ class MgmtQuiz extends React.Component {
 
 	async getQuizQuestions() {
 		await fetch(
-			"https://adgrecruitments.herokuapp.com/questions/management/get-quiz-questions/web",
+			"https://recruitment2022.herokuapp.com/questions/management/get-quiz-questions/web",
 			{
 				method: "GET",
 				headers: {
@@ -65,7 +65,7 @@ class MgmtQuiz extends React.Component {
 
 		var config = {
 			method: "post",
-			url: "https://adgrecruitments.herokuapp.com/user/management/submit",
+			url: "https://recruitment2022.herokuapp.com/user/management/submit",
 			headers: {
 				"Content-Type": "application/json",
 				"auth-token": sessionStorage.getItem("Token"),
@@ -82,7 +82,7 @@ class MgmtQuiz extends React.Component {
 			});
 
 		// await fetch(
-		//   "https://adgrecruitments.herokuapp.com/user/management/submit",
+		//   "https://recruitment2022.herokuapp.com/user/management/submit",
 		//   {
 		//     method: "POST",
 		//     headers: {
