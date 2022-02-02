@@ -22,11 +22,11 @@ export class Login extends Component {
 		let passError = "";
 		var regPattern = /^[12][09][A-Za-z][A-Za-z][A-Za-z]\d{4}$/;
 
-		if (!this.state.regno) {
-			regError = "Enter Registration Number";
-		} else if (!regPattern.test(this.state.regno)) {
-			regError = "Enter a valid Registration Number";
-		}
+		// if (!this.state.regno) {
+		// 	regError = "Enter Registration Number";
+		// } else if (!regPattern.test(this.state.regno)) {
+		// 	regError = "Enter a valid Registration Number";
+		// }
 
 		if (!this.state.password) {
 			passError = "Enter Password";
@@ -70,7 +70,7 @@ export class Login extends Component {
 		// console.log(data);
 		var config = {
 			method: "post",
-			url: "https://adgrecruitments.herokuapp.com/user/login",
+			url: "https://recruitment2022.herokuapp.com/user/login",
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -99,8 +99,8 @@ export class Login extends Component {
 	};
 	render() {
 		const loader = (
-			<div style={{ margin: "135px auto" }}>
-				<img src={adggif} height={105} alt="ADG gif loader" />
+			<div className="loader">
+				<img src={adggif} alt="ADG gif loader" />
 			</div>
 		);
 		if (this.state.loading) {
