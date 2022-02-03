@@ -79,7 +79,7 @@ const DomainPage = (props) => {
                   <PrecisionManufacturingIcon style={{ fontSize: 55 }} />
                   <div className="info">
                     <h1 className="heading">Technical</h1>
-                    <p className="para">10 Questions . 12 mins . Objective Type</p>
+                    <p className="para">10 Questions . 10 mins . Objective Type</p>
                   </div>
                     <input
                       type='radio' value='Technical' name='selection' id='technical' disabled={tech}></input>
@@ -89,7 +89,7 @@ const DomainPage = (props) => {
                     <AssessmentIcon style={{ fontSize: 55 }} />
                   <div className="info">
                     <h1 className="heading">Management</h1>
-                    <p className="para">5 Questions . No Time. Subjective Type</p>
+                    <p className="para">5 Questions . No Time . Subjective Type</p>
                   </div>
                     <input
                       type='radio'
@@ -103,7 +103,7 @@ const DomainPage = (props) => {
                   <ColorLensIcon style={{ fontSize: 55 }} />
                   <div className="info">
                     <h1 className="heading">Design</h1>
-                    <p className="para">10 Questions . 12 mins . Objective Type</p>
+                    <p className="para">10 Questions . 10 mins . Objective Type</p>
                   </div>
                    <input
                       type='radio'
