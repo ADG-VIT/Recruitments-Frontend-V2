@@ -30,7 +30,7 @@ export class Login extends Component {
 		console.log(this.state.password);
 		if (!this.state.regno) {
 			regError = "Enter Registration Number";
-		} else if (!regPattern.test(this.state.regno)) {
+		} else if (!regPattern.test(this.state.regno.trim())) {
 			regError = "Enter a valid Registration Number";
 		}
 
@@ -69,7 +69,7 @@ export class Login extends Component {
 	onResolved = (a) => {
 		// alert("Recaptcha resolved with response: " + this.recaptcha.getResponse());
 		const data = JSON.stringify({
-			regno: this.state.regno,
+			regno: this.state.regno.trim(),
 			password: this.state.password,
 		});
 

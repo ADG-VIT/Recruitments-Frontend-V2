@@ -86,11 +86,11 @@ export class SignUp extends Component {
 			emailError = "Enter a valid VIT Email ID";
 		}
 
-		if (!this.state.phone) {
-			phoneError = "Enter a valid Mobile Number";
-		} else if (this.state.phone.length !== 10) {
-			phoneError = "Mobile Number should be 10 digits long";
-		}
+		// if (!this.state.phone) {
+		// 	phoneError = "Enter a valid Mobile Number";
+		// } else if (this.state.phone.length !== 10) {
+		// 	phoneError = "Mobile Number should be 10 digits long";
+		// }
 
 		if (this.state.yearofstudy === 2) {
 			if (!this.state.github) {
