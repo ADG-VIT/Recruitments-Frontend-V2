@@ -124,9 +124,9 @@ export class Login extends Component {
 									Login with your VIT Registration Number
 								</p>
 								<input
-									className="input t-uc"
+									className="input"
 									type="text"
-									placeholder="Enter Registration Number"
+									placeholder="Enter Registration Number in Uppercase"
 									onChange={(event) => {
 										this.inputChangeHandler(event, "regno");
 									}}

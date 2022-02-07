@@ -260,10 +260,10 @@ export class SignUp extends Component {
 											<input
 												autoComplete="off"
 												onFocus={this.onFocus}
-												className="input t-uc"
+												className="input"
 												value={this.state.regno}
 												type="text"
-												placeholder="Enter Registration Number"
+												placeholder="Enter Registration Number in Uppercase"
 												onChange={(event) => {
 													this.inputChangeHandler(
 														event,
